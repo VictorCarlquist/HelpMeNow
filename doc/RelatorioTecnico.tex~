@@ -1,0 +1,111 @@
+\documentclass[12pt,openright,a4paper]{abntex2}
+\usepackage{fontspec}
+\usepackage[alf]{abntex2cite}
+\usepackage{lastpage}
+\usepackage{ifsp-cjo}
+
+\titulo{Relatório Técnico do Programa \textit{HelpMeNow}}
+\autor{Guilherme Augusto de Macedo \and Matheus Liberato Domingues da Silva \and Pedro Paulo Barioto \and Victor Hugo Carlquist da Silva}
+\data{\today}
+\instituicao{IFSP - Instituto Federal de Educação, Ciência e Tecnologia do Estado de São Paulo - Campus Campos do Jordão}
+\orientador{Alisson Ribeiro}
+\preambulo{Depois a gente faz. \imprimirinstituicao}
+\tipotrabalho{Relatório Técnico}
+\local{Campos do Jordão - SP}
+
+\makeatletter
+\hypersetup{
+    pdftitle={\@title},
+    pdfauthor={\@author},
+    pdfsubject={\imprimirpreambulo},
+    pdfkeywords={PALAVRAS}{CHAVES}{EM}{PORTUGUES},
+    pdfcreator={LaTeX with abnTeX2},
+    colorlinks=false,
+}
+\makeatother
+
+\begin{document}
+
+\imprimircapa
+\imprimirfolhaderosto
+
+\tableofcontents
+
+\newpage
+
+\begin{resumo}
+    Depois a gente faz.
+    \vspace{\onelineskip}
+    \noindent
+    \textbf{Palavras-chaves}: latex. abntex. editoração de texto.
+\end{resumo}
+
+\begin{resumo}[abstract]
+    \begin{otherlanguage*}{english}
+        We Later do.
+        \vspace{\onelineskip}
+        \noindent
+        \textbf{Keywords}: depois a gente faz.
+    \end{otherlanguage*}
+\end{resumo}
+
+\textual
+
+\section {Plano de trabalho}
+
+    \subsection {Identificação do Objetivo}
+    Desenvolvimento de um sistema de abertura e fechamento de chamados com suporte à vários usuários para o projeto final da disciplina de Análise de Sistemas II do curso superior de Tecnologia em Análise de Desenvolvimento de Sistemas do Instituto Federal de Educação, Ciência e Tecnologia do Estado de São Paulo - Campus Campos do Jordão.
+    
+    \subsection {Metas a Serem Atingidas}
+        Construir um programa que seja capaz de abrir, editar e fechar chamados através da rede. Os chamados serão armazenados em um banco de dados podendo ser consultados a qualquer momento.
+    
+    \subsection {Etapas ou Fases de Execução}
+        \begin{enumerate}
+            \item Análise de Requisitos;
+            \item Escolha da Metodologia de Desenvolvimento do Sistema;
+            \item Documentação Diagrámatica;
+            \item Implementação;
+            \item Testes;
+        \end{enumerate}
+    
+\section {Metodologia de Desenvolvimento de Sistemas}
+    A metodologia utilizada para o desenvolvimento do sistema será a metodologia Agile na Categoria Extrem Programming. Tal escolha se justifica devido ao fato de ser uma metodologia cujos resultados obtidos são percebidos de maneira mais rápida, além de nos permitir especificar requisítos básicos para o sistema, já que o tempo de implementação é cerca de uma mês e meio.
+
+\section {Análise de requisitos}
+    \subsection{Requisitos Funcionais}
+    \begin{enumerate}
+        \item[RF] Os chamados deverão ser categorizados em \"abertos\", \"em andamento\" e \"fechados\";
+        \item[RF] Os usuários poderão criar/editar chamados \"abertos\", mas não os marcados como \"em andamento\" ou \"fechados\";
+        \item[RF] Toda e qualquer tarefa executada no sistema precisará ser realizada por um usuário identificado;
+        \item[RF] Deverá existir três níveis de usuários:
+        \begin{itemize}
+            \item[RF] Usuários com privilégios \textbf{epenas} para abertura de chamados;
+            \item[RF] Usuários com privilégios \textbf{apenas} para fechamento de chamados;
+            \item[RF] Superusuário, padrão do sistema e utilizado apenas para tarefas de administração;
+        \end{itemize}
+        \item[RF] A interface do programa não deverá armazenar as senhas dos usuários por motivos de segurança;
+        \item[RF] No entando, poderá salvar os nomes dos usuários para comodidade dos mesmos.
+    \end{enumerate}
+    
+    \subsection{Requisitos Não-Funcionais}
+    \begin{enumerate}
+        \item[RNF] O programa deverá utilizar a biblioteca gráfica Qt, versão >=5.0;
+        \item[RNF] O programa deverá utilizar o banco de dados Postgresql, versão >=9.0;
+        \item[RNF] O programa precisará se conectar ao banco de dados através da rede inter/intranet;
+        \item[RNF] O programa deverá ser pensado, desde sua concepção, como um programa multiplataforma;
+    \end{enumerate}
+\section {Diagramas de Casos de uso}
+
+\section {Diagrama de Classe}
+
+\section {Diagrama Sequência}
+
+\section {Diagrama de Máquina de Estados}
+
+\section {Diagrama de Componentes}
+
+\postextual
+
+\bibliography{bibteste}
+
+\end{document}
