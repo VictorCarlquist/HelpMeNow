@@ -1,0 +1,14 @@
+@startuml
+	title Verifica Nível de Acesso
+	actor "Sistema de Logon" as Logon
+	usecase (Verifica\nNível do\nUsuário) as NívelUsuário
+	usecase (Abre Chamado) as AbreChamado
+	usecase (Fecha Chamado) as FechaChamado
+	usecase (Visualiza\nChamado) as VisualizaChamado
+	
+	Logon -right-> NívelUsuário
+	NívelUsuário -up-> AbreChamado : Usuário Normal
+	NívelUsuário --> FechaChamado : Usuário Administrador
+	
+	NívelUsuário --right-> VisualizaChamado
+@enduml

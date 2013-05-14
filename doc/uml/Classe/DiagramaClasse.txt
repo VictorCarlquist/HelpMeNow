@@ -1,0 +1,31 @@
+@startuml
+
+class Chamados {
+	int IdChamado
+	int IdUsuarioAbertura
+	string TituloChamado
+	string DescricaoChamado
+	date DataChamado
+	char StatusChamado
+	int IdUsuarioFechamento
+	date DataFechamento
+	string Solucao
+}
+
+class Usuarios {
+	int IdUsuario
+	string Login
+	string PrimeiroNome
+	string UltimoNome
+	int IdDepartamento
+}
+
+class Departamentos {
+	int IdDepartamento
+	string NomeDepartamento
+}
+
+Chamados "n" --right-> "1" Usuarios
+Departamentos "n" --down-> "1" Usuarios
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+	title Realizar Logon
+	actor Funcionário
+	usecase (Entra \nUsuário\ne Senha) as Logon
+	usecase (Visualiza\nChamados) as Sucesso
+	usecase (Exibe \nMensagem\nde Erro) as Falha
+	
+	Funcionário --> Logon
+	Logon --down-> Sucesso : Sucesso
+	Logon --right-> Falha : Falha
+	Falha ---> Logon : Tentar novamente
+@enduml
