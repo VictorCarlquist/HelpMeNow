@@ -1,0 +1,36 @@
+@startuml
+	actor "Usuário"
+	
+		activate "Usuário"
+	alt
+			"Usuário" -> ":Interface" : Abrir chamado
+			activate ":Interface"
+				activate ":Controlador"
+					":Interface" -> ":Controlador" : Abrir chamado
+					activate ":Chamado"
+						":Controlador" -> ":Chamado" : createChamado() , dados do chamado
+						":Chamado" --> ":Controlador" : Chamado registrado
+					deactivate ":Chamado"
+					":Controlador" --> ":Interface" : Chamado registrado
+				deactivate ":Controlador"
+			deactivate ":Interface"
+		
+	else
+		
+			"Usuário" -> ":Interface" : Consultar chamado
+			activate ":Interface"
+				activate ":Controlador"
+					":Interface" -> ":Controlador" : Consultar chamado
+					activate ":Chamado"
+						loop Para cada chamado registrado pelo usuário
+							":Controlador" -> ":Chamado" : conChamado()
+							":Chamado" --> ":Controlador" : Chamado registrado pelo usuário
+						end
+					deactivate ":Chamado"
+					":Controlador" --> ":Interface" : Lista de Chamados
+				deactivate ":Controlador"
+			deactivate ":Interface"
+		deactivate "Usuário"
+	end
+@enduml
+
