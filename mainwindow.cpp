@@ -6,6 +6,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    logonscreen = new LogonScreen(this);
+    setCentralWidget(logonscreen);
+    logonscreen->resize(400, 400);
+    logonscreen->show();
+
+    connect(logonscreen, SIGNAL(connected()), logonscreen, SLOT(close()));
+
 }
 
 MainWindow::~MainWindow()

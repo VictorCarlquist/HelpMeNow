@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "logonscreen.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -17,6 +19,8 @@ public:
     
 private:
     Ui::MainWindow *ui;
+
+    LogonScreen *logonscreen;
 };
 
 #endif // MAINWINDOW_H
