@@ -1,0 +1,7 @@
+@startuml
+	Funcionário -> (Realizar Logon)
+	Cliente -> (Realizar Logon)
+	Funcionário --> (Manter Chamados para Funcionário)
+	Cliente --> (Manter Chamados para Cliente)
+	Funcionário --> (Consultar Chamados)
+@enduml
