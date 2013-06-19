@@ -1,0 +1,18 @@
+@startuml
+    box "sd AbrirChamado" #white
+        ' hide footbox
+        actor Funcionario
+        participant ":Interface"
+        participant ":Controlador"
+		create ":Logon"
+
+	":Funcionário" -> ":Interface" : Informa usuário e senha
+	":Interface" -> ":Controlador" : Informa usuário e senha
+	":Controlador" -> ":Logon" : usuário e senha
+	":Logon" --> ":Controlador" : Login Ok
+	destroy ":Logon"
+	
+
+
+
+@enduml
