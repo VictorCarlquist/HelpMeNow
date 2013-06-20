@@ -1,31 +1,31 @@
 @startuml
 
-class Chamados {
-	int IdChamado
-	int IdUsuarioAbertura
-	string TituloChamado
-	string DescricaoChamado
-	date DataChamado
-	char StatusChamado
-	int IdUsuarioFechamento
-	date DataFechamento
-	string Solucao
+class chamados {
+	int id_chamado
+	string titulo_chamado
+	string descricao_chamado
+	string solucao_chamado
+	date dt_abert_chamado
+	date dt_fech_chamado
+	char status_chamado
+	string id_usr_abriu_chamado
+	string id_usr_fechou_chamado
 }
 
-class Usuarios {
-	int IdUsuario
-	string Login
-	string PrimeiroNome
-	string UltimoNome
-	int IdDepartamento
+class usuarios {
+	int id_usr
+	string nome_usr
+	string sobrenome_usr
+	int id_dpto_usr
 }
 
-class Departamentos {
-	int IdDepartamento
-	string NomeDepartamento
+class departamentos {
+	int id_dpto
+	string nome_dpto
 }
 
-Chamados "n" --right-> "1" Usuarios
-Departamentos "n" --down-> "1" Usuarios
+chamados "1..*" --down--- "1" usuarios : abre
+chamados "1..*" --right-- "0..1" usuarios : fecha
+departamentos "1" --down-- "1..*" usuarios
 
 @enduml
