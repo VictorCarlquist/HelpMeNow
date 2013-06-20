@@ -1,12 +1,12 @@
 @startuml
-	actor "Funcionário"
-	activate "Funcionário"
-		"Funcionário" -> ":Interface" : Informa usuário e senha
+	actor "Funcionário/Cliente" as func
+	activate func
+		func -> ":Interface" : Informa usuário e senha
 		activate ":Interface"
 			activate ":Controlador"
 				":Interface" -> ":Controlador" : Informa usuário e senha
 				activate ":Logon"
-					":Controlador" -> ":Logon" : usuário e senha
+					":Controlador" -> ":Logon" : do_Logon()
 					":Logon" --> ":Controlador" : Login Ok
 					":Controlador" --> ":Logon" : getPermissao()
 					":Logon" --> ":Controlador" : Privilégio : String
@@ -14,12 +14,17 @@
 				":Controlador" --> ":Interface" : Login Ok
 			deactivate ":Controlador"
 		deactivate ":Interface"
-	deactivate "Funcionário"
+	deactivate func
 	
-	
-	
-	group ref  "Manter Chamados"
-		
+	alt Se logon de Funcionario
+		group ref Manter chamados Funcionário
+		end
+	else Se logon de Cliente
+		group ref Manter chamados Cliente
+		end
 	end
+	
+		
+	
 @enduml
 

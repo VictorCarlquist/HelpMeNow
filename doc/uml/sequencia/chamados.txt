@@ -1,7 +1,7 @@
 @startuml
 
 	hide footbox
-	actor "Usuário"
+	actor cliente as cliente 
 	
 		activate "Usuário"
 	alt

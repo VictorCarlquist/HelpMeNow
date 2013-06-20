@@ -1,4 +1,23 @@
 @startuml
-	[*] -> 
-@enduml
+	state "Abrindo chamado" as abrir
+	state "Preenchendo informações" as pre
+	state "Armazenando informação" as registrar
+	state "Consultando chamado" as con
 
+	state ifopt <<choice>>
+
+	[*] -> ifopt 
+
+	ifopt-> abrir : Abrir chamado
+	abrir: + do / abrirChamado()
+	abrir -> pre
+	pre: + do / createChamado()
+	pre --> registrar
+	registrar: + do / update()
+	registrar -> [*]
+	
+	ifopt--> con : Consultar chamado
+	con : + do / conChamado()
+	con -> [*]
+
+@enduml
