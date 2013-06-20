@@ -2,8 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTableView>
+#include <QSql>
+#include <QTabWidget>
 
 #include "logonscreen.h"
+#include "abrirchamado.h"
 
 namespace Ui {
 class MainWindow;
@@ -21,6 +25,12 @@ private:
     Ui::MainWindow *ui;
 
     LogonScreen *logonscreen;
+    AbrirChamado *abrirchamado;
+    QTabWidget *tab;
+
+private slots:
+    void mostratelaprincipal();
+    void abrirchamados();
 };
 
 #endif // MAINWINDOW_H

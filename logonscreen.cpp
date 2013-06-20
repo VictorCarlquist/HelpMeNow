@@ -24,11 +24,11 @@ void LogonScreen::armazena_login(QString login)
 void LogonScreen::do_logon()
 {
     QSettings settings;
-    QSqlDatabase db = QSqlDatabase::addDatabase("QPSQL", "default");
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL", "default");
 
-    db.setHostName("localhost");
-    db.setPort(5432);
-    db.setDatabaseName("helpmenow");
+    db.setHostName("192.168.1.169");
+    db.setPort(3306);
+    db.setDatabaseName("helpmenow_db");
     db.setUserName(settings.value("login").toString());
     db.setPassword(ui->lineEdit_Senha->text());
 
