@@ -1,25 +1,16 @@
 @startuml
-	actor "Funcionário"
-	activate "Funcionário"
-		"Funcionário" -> ":Interface" : Informa usuário e senha
-		activate ":Interface"
-			activate ":Controlador"
-				":Interface" -> ":Controlador" : Informa usuário e senha
-				activate ":Logon"
-					":Controlador" -> ":Logon" : usuário e senha
-					":Logon" --> ":Controlador" : Login Ok
-					":Controlador" --> ":Logon" : getPermissao()
-					":Logon" --> ":Controlador" : Privilégio : String
-				deactivate ":Logon"
-				":Controlador" --> ":Interface" : Login Ok
-			deactivate ":Controlador"
-		deactivate ":Interface"
-	deactivate "Funcionário"
-	
-	
-	
-	group ref  "Manter Chamados"
+	state "Aguardando Login" as aguard
+	state "Realizando Logon" as logon
+	state "Pegando Permissão" as permi
+
+	[*] -> aguard
+	aguard -> logon
+	logon: + do / do_logon()
+	logon -> permi
+	permi : + do / getPermissao()
+
+	permi -> [*]
 		
-	end
+	
 @enduml
 

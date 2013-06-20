@@ -1,34 +1,20 @@
 @startuml
-	hide footbox
-	actor "Funcionário"
-		activate "Funcionário"
-			"Funcionário" -> ":Interface" : Consultar chamado
-			activate ":Interface"
-				activate ":Controlador"
-					":Interface" -> ":Controlador" : Consultar chamado
-					activate ":Chamado"
-						loop Para cada chamado registrado
-							":Controlador" -> ":Chamado" : conChamado(Filtro[chamados fechados][chamados abertos])
-							":Chamado" --> ":Controlador" : Chamado registrado
-						end
-					deactivate ":Chamado"
-					":Controlador" --> ":Interface" : Lista de Chamados
-				deactivate ":Controlador"
-		
-				"Funcionário" -> ":Interface" : Chamado selecionado
-				activate ":Controlador"
-					":Controlador" -> ":Chamado" : getChamado(id:int)
-					":Chamado" --> ":Controlador": Informações do chamado
-					":Controlador" -> ":Interface" : Informações do chamado
-					opt Fechar chamado
-						"Funcionário" -> ":Interface" : Fechar chamado selecionado
-						":Interface" -> ":Controlador" : Fechar chamado selecionado
-						":Controlador" -> ":Chamado" : closeChamado()
-						":Chamado" --> ":Controlador" : Ok: Boolean
-						":Controlador" -> ":Interface" : O Chamado  foi fechado 
-					end
-				deactivate ":Controlador"
-			deactivate ":Interface"
-		deactivate "Funcionário"
-@enduml
+	state "Consultando chamados" as consulta
+	state "Selecionando chamado" as seleciona
+	state "Fechando chamado" as fecha
 
+	state ifopt <<choice>>
+
+
+	[*] -> consulta
+	consulta : + do  / conChamados()
+	consulta -> seleciona
+	seleciona : + do / getChamado(index:int)
+	seleciona --> ifopt : Fechar chamado ?
+	ifopt -> fecha : Sim
+	fecha : + do / closeChamado()
+
+	fecha -->[*]
+	ifopt --> [*] : Não
+
+@enduml
