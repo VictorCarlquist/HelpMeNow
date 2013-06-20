@@ -35,7 +35,14 @@
     </property>
     <addaction name="action_Sobre"/>
    </widget>
+   <widget class="QMenu" name="menu_FErramentas">
+    <property name="title">
+     <string>&amp;Ferramentas</string>
+    </property>
+    <addaction name="action_Abrir_Chamado"/>
+   </widget>
    <addaction name="menu_Arquivo"/>
+   <addaction name="menu_FErramentas"/>
    <addaction name="menu_Ajuda"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
@@ -58,6 +65,11 @@
   <action name="action_Sobre">
    <property name="text">
     <string>&amp;Sobre...</string>
+   </property>
+  </action>
+  <action name="action_Abrir_Chamado">
+   <property name="text">
+    <string>&amp;Abrir Chamado...</string>
    </property>
   </action>
  </widget>

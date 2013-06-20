@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.5.22, for osx10.6 (i386)
 --
--- Host: localhost    Database: mydb
+-- Host: localhost    Database: helpmenow_db
 -- ------------------------------------------------------
 -- Server version	5.5.22
 
@@ -16,7 +16,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 -- MySQL dump 10.13  Distrib 5.5.22, for osx10.6 (i386)
 --
--- Host: localhost    Database: mydb
+-- Host: localhost    Database: helpmenow_db
 -- ------------------------------------------------------
 -- Server version	5.5.22
 
@@ -32,12 +32,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `mydb`
+-- Current Database: `helpmenow_db`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `mydb` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `helpmenow_db` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-USE `mydb`;
+USE `helpmenow_db`;
 
 --
 -- Table structure for table `chamados`
@@ -150,10 +150,10 @@ INSERT INTO `usuario` VALUES (1,'MATHEUS','LIBERATO',1),(2,'VICTOR','CARLQUIST',
 UNLOCK TABLES;
 
 --
--- Current Database: `mydb`
+-- Current Database: `helpmenow_db`
 --
 
-USE `mydb`;
+USE `helpmenow_db`;
 
 --
 -- Final view structure for view `first_view`
