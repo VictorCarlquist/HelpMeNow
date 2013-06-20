@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTableView>
 #include <QSql>
+#include <QTabWidget>
 
 #include "logonscreen.h"
 #include "abrirchamado.h"
@@ -25,8 +26,7 @@ private:
 
     LogonScreen *logonscreen;
     AbrirChamado *abrirchamado;
-    QTableView *view;
-    QSqlQueryModel *model;
+    QTabWidget *tab;
 
 private slots:
     void mostratelaprincipal();
