@@ -8,6 +8,7 @@
 
 #include "logonscreen.h"
 #include "abrirchamado.h"
+#include "fecharchamado.h"
 
 namespace Ui {
 class MainWindow;
@@ -31,6 +32,7 @@ private:
 private slots:
     void mostratelaprincipal();
     void abrirchamados();
+    void fecharchamados(QModelIndex index);
 };
 
 #endif // MAINWINDOW_H

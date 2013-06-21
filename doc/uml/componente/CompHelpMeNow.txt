@@ -5,13 +5,13 @@
 
 	package "HelpMeNow" {
 
-		[Manter Chamados\n Funcionario] -(0- [SGBD]
-		[Manter Chamados\n Cliente] -(0- [SGBD]	
+		[Manter Chamados] -(0- [SGBD]
+		
 		[Logon] -(0- [SGBD]
 
 		[Logon] --0)- [Interface]
-		[Manter Chamados\n Funcionario] -0)- [Interface]
-		[Manter Chamados\n Cliente] --0)- [Interface]
+		[Manter Chamados] -0)- [Interface]
+		
 		
 		
 		

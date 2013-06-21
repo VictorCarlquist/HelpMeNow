@@ -6,25 +6,17 @@
 			activate ":Controlador"
 				":Interface" -> ":Controlador" : Informa usuário e senha
 				activate ":Logon"
-					":Controlador" -> ":Logon" : do_Logon()
+					":Controlador" -> ":Logon" : do_logon()
 					":Logon" --> ":Controlador" : Login Ok
-					":Controlador" --> ":Logon" : getPermissao()
-					":Logon" --> ":Controlador" : Privilégio : String
 				deactivate ":Logon"
 				":Controlador" --> ":Interface" : Login Ok
 			deactivate ":Controlador"
 		deactivate ":Interface"
 	deactivate func
 	
-	alt Se logon de Funcionario
-		group ref Manter chamados Funcionário
-		end
-	else Se logon de Cliente
-		group ref Manter chamados Cliente
-		end
-	end
-	
-		
-	
+	opt
+		group ref Manter chamados
+        end
+    end
 @enduml
 

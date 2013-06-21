@@ -26,7 +26,7 @@ void LogonScreen::do_logon()
     QSettings settings;
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL", "default");
 
-    db.setHostName("192.168.1.169");
+    db.setHostName("localhost");
     db.setPort(3306);
     db.setDatabaseName("helpmenow_db");
     db.setUserName(settings.value("login").toString());

@@ -6,10 +6,7 @@
 	[*] -> aguard
 	aguard -> logon
 	logon: + do / do_logon()
-	logon -> permi
-	permi : + do / getPermissao()
-
-	permi -> [*]
+	logon -> [*]
 		
 	
 @enduml

@@ -7,12 +7,12 @@
 
 
 	[*] -> consulta
-	consulta : + do  / conChamados()
+	consulta : + do  / mostratelaprincipal()
 	consulta -> seleciona
-	seleciona : + do / getChamado(index:int)
+	seleciona : + do / fecharchamado(int id_chamado)
 	seleciona --> ifopt : Fechar chamado ?
 	ifopt -> fecha : Sim
-	fecha : + do / closeChamado()
+	fecha : + do / mostratelaprincipal()
 
 	fecha -->[*]
 	ifopt --> [*] : Não

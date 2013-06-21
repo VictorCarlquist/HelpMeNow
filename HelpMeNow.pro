@@ -15,12 +15,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     logonscreen.cpp \
-    abrirchamado.cpp
+    abrirchamado.cpp \
+    fecharchamado.cpp
 
 HEADERS  += mainwindow.h \
     logonscreen.h \
-    abrirchamado.h
+    abrirchamado.h \
+    fecharchamado.h
 
 FORMS    += mainwindow.ui \
     logonscreen.ui \
-    abrirchamado.ui
+    abrirchamado.ui \
+    fecharchamado.ui
