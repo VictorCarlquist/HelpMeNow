@@ -5,16 +5,14 @@
 
 	package "HelpMeNow" {
 
-		[Manter Chamados] -(0- [SGBD]
+		[Consultar Chamados] --0)- [Interface]
+		[Manter Chamados] --(0- [SGBD]
 		
-		[Logon] -(0- [SGBD]
+		[Logon] --(0- [SGBD]
+		[Consultar Chamados] -(0- [SGBD]
 
-		[Logon] --0)- [Interface]
-		[Manter Chamados] -0)- [Interface]
-		
-		
-		
-		
+		[Logon] -0)-- [Interface]
+		[Manter Chamados] --0)-- [Interface]
 		
 		
 	}

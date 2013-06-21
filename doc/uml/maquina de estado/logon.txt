@@ -1,7 +1,7 @@
 @startuml
 	state "Aguardando Login" as aguard
 	state "Realizando Logon" as logon
-	state "Pegando Permissão" as permi
+	
 
 	[*] -> aguard
 	aguard -> logon

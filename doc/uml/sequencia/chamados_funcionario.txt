@@ -8,7 +8,7 @@
 					":Interface" -> ":Controlador" : Consultar chamado
 					activate ":Chamado"
 						loop Para cada chamado registrado
-							":Controlador" -> ":Chamado" : conChamado(Filtro[chamados fechados][chamados abertos])
+							":Controlador" -> ":Chamado" : mostrartelaprincipal()
 							":Chamado" --> ":Controlador" : Chamado registrado
 						end
 					deactivate ":Chamado"
@@ -17,15 +17,17 @@
 		
 				"Funcionário" -> ":Interface" : Chamado selecionado
 				activate ":Controlador"
-					":Controlador" -> ":Chamado" : getChamado(id:int)
+					":Controlador" -> ":Chamado" : fecharchamado(int id_chamado) 
+					note right: Irá abrir um formulário com as\ninformações do chamado e com a \nopção de fecha-lo,isso não indica \nque o chamado irá ser fechado.
 					":Chamado" --> ":Controlador": Informações do chamado
 					":Controlador" -> ":Interface" : Informações do chamado
 					opt Fechar chamado
 						"Funcionário" -> ":Interface" : Fechar chamado selecionado
 						":Interface" -> ":Controlador" : Fechar chamado selecionado
-						":Controlador" -> ":Chamado" : closeChamado()
+						":Controlador" -> ":Chamado" : fecharchamado(int id_chamado)
 						":Chamado" --> ":Controlador" : Ok: Boolean
 						":Controlador" -> ":Interface" : O Chamado  foi fechado 
+						note right: O chamado irá mudar de aba (de aberto para fechado)
 					end
 				deactivate ":Controlador"
 			deactivate ":Interface"

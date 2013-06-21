@@ -1,8 +1,6 @@
 @startuml
 	Funcionário -> (Realizar Logon)
 	Cliente -> (Realizar Logon)
-	Funcionário --> (Manter Chamados)
-	Cliente --> (Manter Chamados)
-	Funcionário --> (Consultar Chamados)
-    Cliente --> (Consultar Chamados)
+	(Consultar Chamados) <-- (Manter Chamados) :<<extend>>
+	(Realizar Logon) ..> (Consultar Chamados) : <<include>>
 @enduml

@@ -1,11 +1,11 @@
 @startuml
 
 	hide footbox
-	actor cliente as cliente 
+	actor "Cliente" as cliente 
 	
-		activate "Usuário"
+		activate cliente
 	alt
-			"Usuário" -> ":Interface" : Abrir chamado
+			cliente -> ":Interface" : Abrir chamado
 			activate ":Interface"
 				activate ":Controlador"
 					":Interface" -> ":Controlador" : Abrir chamado
@@ -19,7 +19,7 @@
 		
 	else
 		
-			"Usuário" -> ":Interface" : Consultar chamado
+			cliente -> ":Interface" : Consultar chamado
 			activate ":Interface"
 				activate ":Controlador"
 					":Interface" -> ":Controlador" : Consultar chamado
@@ -32,7 +32,7 @@
 					":Controlador" --> ":Interface" : Lista de Chamados
 				deactivate ":Controlador"
 			deactivate ":Interface"
-		deactivate "Usuário"
+		deactivate cliente
 	end
 @enduml
 
